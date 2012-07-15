@@ -70,7 +70,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "./Sites/Templates"
+    #"./Sites/Templates"
 )
 
 # List of finder classes that know how to find static files in
@@ -156,4 +156,4 @@ LOGGING = {
 }
 
 import dj_database_url
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:coolooc23@localhost:5432/TeesAndSees')}
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:coolooc23@localhost:5432/teesandsees')}
