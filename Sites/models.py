@@ -20,6 +20,15 @@ class Points(models.Model):
     description = models.CharField(max_length=200)
     def __unicode__(self):
         return self.description
+        
+class Page(models.Model):
+    Title = models.CharField(max_length=200)
+    Body = models.CharField(max_length=1600)
+    Author = models.CharField(max_length=200)
+    Dest = models.CharField(max_length=20)
+    pub_date = models.DateTimeField('date published')
+    def __unicode__(self):
+        return self.Title        
 
 
 # Create your models here.
