@@ -2,7 +2,7 @@ from django.db import models
 import datetime
 from django.utils import timezone
 
-class Sites(models.Model):
+class App(models.Model):
     Name = models.CharField(max_length=200)
     Address = models.CharField(max_length=200)
     founded = models.IntegerField()
@@ -13,7 +13,7 @@ class Sites(models.Model):
         return self.question
         
 class Points(models.Model):
-    site = models.ForeignKey(Sites)
+    site = models.ForeignKey(App)
     point_type = models.CharField(max_length=50)
     importance = models.IntegerField()
     pub_date = models.DateTimeField('date published')
