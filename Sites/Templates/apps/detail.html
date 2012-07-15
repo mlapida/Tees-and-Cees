@@ -1,0 +1,10 @@
+<h1>{{ app.Name }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{{app.Address}}
+
+<ul>
+{% for points in app.points_set.all %}
+	<li>{{ points.description }}</li>
+{% endfor %}
+</ul>

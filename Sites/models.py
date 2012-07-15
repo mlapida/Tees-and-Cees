@@ -10,16 +10,16 @@ class App(models.Model):
     business_model = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     def __unicode__(self):
-        return self.question
+        return self.Name
         
 class Points(models.Model):
-    site = models.ForeignKey(App)
+    App = models.ForeignKey(App)
     point_type = models.CharField(max_length=50)
     importance = models.IntegerField()
     pub_date = models.DateTimeField('date published')
     description = models.CharField(max_length=200)
     def __unicode__(self):
-        return self.choice
+        return self.description
 
 
 # Create your models here.

@@ -1,0 +1,9 @@
+{% if latest_apps_list %}
+    <ul>
+    {% for App in latest_apps_list %}
+        <li><a href="/apps/{{ App.id }}/">{{ App.Name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Apps are available.</p>
+{% endif %}
