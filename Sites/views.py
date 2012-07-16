@@ -1,10 +1,4 @@
 # Create your views here.
-from django.conf.urls import patterns, include, url
-from django.views.generic import DetailView, ListView
-
-def index(request):
-     return render_to_response('apps/home.html')
-
 from django.template import Context, loader
 from Sites.models import Page
 from django.http import HttpResponse
