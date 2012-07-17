@@ -124,7 +124,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'Sites'
+    'Sites',
+    'haystack',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -155,6 +156,14 @@ LOGGING = {
         },
     }
 }
-
+#for heroku
 import dj_database_url
 DATABASES = {'default': dj_database_url.config(default='postgres://postgres:coolooc23@localhost:5432/teesandsees')}
+
+
+#for haystack
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+    },
+}
