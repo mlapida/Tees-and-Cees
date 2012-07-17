@@ -10,7 +10,7 @@ class PointsInline(admin.StackedInline):
 class AppAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['Name', 'Address', 'founded', 'founder', 'business_model']}),
-        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+        #('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
     inlines = [PointsInline]
     list_display = ('Name', 'pub_date')
@@ -21,7 +21,7 @@ class AppAdmin(admin.ModelAdmin):
 class PageAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['Title', 'Body', 'Author', 'Dest']}),
-        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+        #('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
     list_display = ('Title', 'pub_date')
     list_filter = ['pub_date']

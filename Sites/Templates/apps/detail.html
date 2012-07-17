@@ -20,7 +20,7 @@
 			{% for points in app.points_set.all %}
 				<blockquote>
 					<p>{{ points.description }}</p>
-					<div class="progress progress-{{points.point_type}} progress-striped">
+					<div class="progress progress-{{points.type}} progress-striped">
 					  <div class="bar"
 					       style="width: {{ points.importance}}%;"></div>
 					</div>
