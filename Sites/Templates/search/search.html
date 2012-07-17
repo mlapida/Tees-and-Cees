@@ -16,7 +16,7 @@
 	            
 	            {% for result in page.object_list %}
 	            	<div class="well lead">
-	            		<a href="/apps/{{ result.object.pk }}"> {{ result.object.Name }}</a>
+	            		<a href="/apps/{{ result.object.slug }}"> {{ result.object.Name }}</a>
 	            	</div>
 	            {% empty %}
 	                <div class="alert alert-error">No results found.</div>

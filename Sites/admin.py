@@ -8,14 +8,16 @@ class PointsInline(admin.StackedInline):
     extra = 3
 
 class AppAdmin(admin.ModelAdmin):
+    
     fieldsets = [
-        (None,               {'fields': ['Name', 'Address', 'founded', 'founder', 'business_model']}),
+        (None,               {'fields': ['Name', 'Address', 'founded', 'founder', 'business_model', 'slug']}),
         #('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
     inlines = [PointsInline]
     list_display = ('Name', 'pub_date')
     list_filter = ['pub_date']
     search_fields = ['Name']
+    prepopulated_fields = {"slug": ("Name",)}
     date_hierarchy = 'pub_date'
 
 class PageAdmin(admin.ModelAdmin):

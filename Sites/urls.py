@@ -8,7 +8,7 @@ urlpatterns = patterns('',
             queryset=App.objects.order_by('-pub_date')[:5],
             context_object_name='latest_apps_list',
             template_name='apps/index.html')),
-    url(r'^(?P<pk>\d+)/$',
+    url(r'^(?P<slug>\w+)/$',
         DetailView.as_view(
             model=App,
             template_name='apps/detail.html'

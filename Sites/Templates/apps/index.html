@@ -5,7 +5,7 @@
 	<div class="span4 offset4">
 	{% if latest_apps_list %}
 	    {% for App in latest_apps_list %}
-	        <h3><a href="/apps/{{ App.id }}/">{{ App.Name }}</a></h3>
+	        <h3><a href="/apps/{{ App.slug }}/">{{ App.Name }}</a></h3>
 	    {% endfor %}
 	    
 	{% else %}

@@ -4,10 +4,11 @@ from django.utils import timezone
 
 class App(models.Model):
 	Name = models.CharField(max_length=200)
-	Address = models.CharField(max_length=200)
+	Address = models.URLField(verify_exists=True, max_length=200)
 	founded = models.IntegerField()
 	founder = models.CharField(max_length=200)
 	business_model = models.CharField(max_length=200)
+	slug = models.SlugField(max_length=200)
 	pub_date = models.DateTimeField('date published', auto_now_add=True)
 	def __unicode__(self):
 		return self.Name
