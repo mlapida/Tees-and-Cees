@@ -63,7 +63,7 @@ STATIC_ROOT = './TeesAndSees/nstatic/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = 'https://s3.amazonaws.com/tandc/Static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -110,7 +110,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "./Sites/Templates"
+    "./TeesAndSees/Templates"
 )
 
 INSTALLED_APPS = (
