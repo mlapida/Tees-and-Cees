@@ -28,3 +28,4 @@ pip-log.txt
 
 venv
 *.pyc
+.DS_STORE
