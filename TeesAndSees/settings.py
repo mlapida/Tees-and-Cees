@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'Sites',
     'haystack',
     'gunicorn',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
