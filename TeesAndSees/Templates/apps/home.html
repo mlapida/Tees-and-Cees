@@ -4,10 +4,21 @@
 
 <div class="row">
 	<div class="span4 offset4">
+		<div class="lead">
+			{# Place static message here #}
+			Lets find out what that legal jargon means.
+		</div>
+			<form class="well form-search" method="get" action="/search/q=">
+				<input type="text" name="q" placeholder="Name that app..."/>
+				<button type="submit" class="btn"><i class="icon-search"></i> Search</button>
+			</form>
       {% if homepage_list %}
 	      	{% for Page in homepage_list %}
-	      		<h2>{{ Page.Title }}</h2>
-	      		<p>{{ Page.Body }}</p>
+	      		<div class="well">
+		      		<h2>{{ Page.Title }}</h2>
+		      		<p>{{ Page.Body }}</p>
+		      		<h6>{{Page.pub_date}}</h6>
+	      		</div>
 	      	{% endfor %}
 	   {% else %}
 	   		<p>No posts are available.</p>
