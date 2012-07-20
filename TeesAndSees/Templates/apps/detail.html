@@ -3,7 +3,7 @@
 {% block header %} {{ app.Name }}{% endblock %}
 {% block script %}
 	$(function () {
-         $("#point").popover(
+         $(".point").popover(
             {
                 offset: 5,
                 placement: 'left'
@@ -30,7 +30,7 @@
 			</dl>
 
 			{% for points in app.points_set.all %}
-				<blockquote id="point" title="{{points.point_type}}" data-content="{{points.exerpt}}">
+				<blockquote class="point" title="{{points.point_type}}" data-content="{{points.exerpt}}">
 					<p>{{ points.description }}</p>
 					<div class="progress progress-{{points.type}} progress-striped">
 					  <div class="bar"
