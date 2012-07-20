@@ -24,8 +24,8 @@ class Points(models.Model):
 	importance = models.IntegerField()
 	pub_date = models.DateTimeField('date published', auto_now_add=True)
 	description = models.TextField(max_length=500)
-	#source = models.URLField(verify_exists=True, max_length=200, default="n/a")
-	#exerpt = models.TextField(max_length=500, default="Coming Soon")
+	source = models.URLField(verify_exists=True, max_length=200, default="n/a")
+	exerpt = models.TextField(max_length=500, default="Coming Soon")
 	def __unicode__(self):
 		return self.description
 	def type(self):
