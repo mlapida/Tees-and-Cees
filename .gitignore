@@ -26,6 +26,6 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-venv
+ve
 *.pyc
 .DS_STORE
