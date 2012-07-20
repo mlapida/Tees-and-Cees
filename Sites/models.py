@@ -15,15 +15,17 @@ class App(models.Model):
         
 class Points(models.Model):
 	POINT_TYPES = (
-		('PP' , 'Privacy Policy'),
-		('TC' , 'Terms & Conditions'),
-		('G' , 'General'),
+		('Privacy Policy' , 'Privacy Policy'),
+		('Terms & Conditions' , 'Terms & Conditions'),
+		('General' , 'General'),
 	)
 	App = models.ForeignKey(App)
 	point_type = models.CharField(max_length=50, choices=POINT_TYPES)
 	importance = models.IntegerField()
 	pub_date = models.DateTimeField('date published', auto_now_add=True)
 	description = models.TextField(max_length=500)
+	source = models.URLField(verify_exists=True, max_length=200, default="n/a")
+	exerpt = models.TextField(max_length=500, default="Coming Soon")
 	def __unicode__(self):
 		return self.description
 	def type(self):

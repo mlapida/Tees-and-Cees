@@ -10,10 +10,11 @@
 			{# Place static message here #}
 			Lets find out what that legal jargon means.
 		</div>
-			<form class="well form-search" method="get" action="/search/q=">
-				<input type="text" name="q" placeholder="Name that app..."/>
-				<button type="submit" class="btn"><i class="icon-search"></i> Search</button>
-			</form>
+		
+		<form class="well form-search" method="get" action="/search/q=">
+			<input type="text" name="q" placeholder="Name that app..."/>
+			<button type="submit" class="btn"><i class="icon-search"></i> Search</button>
+		</form>
       {% if homepage_list %}
 	      	{% for Page in homepage_list %}
 	      		<div class="well">
