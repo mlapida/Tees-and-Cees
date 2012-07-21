@@ -29,6 +29,8 @@ class Migration(SchemaMigration):
             ('importance', self.gf('django.db.models.fields.IntegerField')()),
             ('pub_date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
             ('description', self.gf('django.db.models.fields.TextField')(max_length=500)),
+            ('source', self.gf('django.db.models.fields.URLField')(default='n/a', max_length=200)),
+            ('exerpt', self.gf('django.db.models.fields.TextField')(default='Coming Soon', max_length=500)),
         ))
         db.send_create_signal('Sites', ['Points'])
 
@@ -80,10 +82,12 @@ class Migration(SchemaMigration):
             'App': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['Sites.App']"}),
             'Meta': {'object_name': 'Points'},
             'description': ('django.db.models.fields.TextField', [], {'max_length': '500'}),
+            'exerpt': ('django.db.models.fields.TextField', [], {'default': "'Coming Soon'", 'max_length': '500'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'importance': ('django.db.models.fields.IntegerField', [], {}),
             'point_type': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'pub_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'})
+            'pub_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
+            'source': ('django.db.models.fields.URLField', [], {'default': "'n/a'", 'max_length': '200'})
         }
     }
 
