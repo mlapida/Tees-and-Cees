@@ -36,13 +36,15 @@ class Points(models.Model):
 		return "danger"
         
 class Page(models.Model):
+	DESTS = (
+		('home' , 'Home'),
+		('sidebar' , 'Sidebar'),
+	)
 	Title = models.CharField(max_length=200)
 	Body = models.TextField(max_length=1600)
 	Author = models.CharField(max_length=200)
-	Dest = models.CharField(max_length=20)
+	Dest = models.CharField(max_length=20, choices=DESTS)
 	pub_date = models.DateTimeField('date published', auto_now_add=True)
 	def __unicode__(self):
 		return self.Title        
 
-
-# Create your models here.

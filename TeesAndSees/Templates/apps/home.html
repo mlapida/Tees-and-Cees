@@ -3,30 +3,29 @@
 {% block header %} Home{% endblock %}
 
 {% block content %}
-
 <div class="row">
-	<div class="span4 offset4">
+	<div class="span6 offset3">
 		<div class="lead">
 			{# Place static message here #}
 			Lets find out what that legal jargon means.
 		</div>
 		
-		<form class="well form-search" method="get" action="/search/q=">
+		<form class="well form-search" method="get" action="/search/">
 			<input type="text" name="q" placeholder="Name that app..."/>
 			<button type="submit" class="btn"><i class="icon-search"></i> Search</button>
 		</form>
-      {% if homepage_list %}
-	      	{% for Page in homepage_list %}
-	      		<div class="well">
-		      		<h2>{{ Page.Title }}</h2>
-		      		<p>{{ Page.Body }}</p>
-		      		<h6>{{Page.pub_date}}</h6>
-	      		</div>
-	      	{% endfor %}
-	   {% else %}
+		{% if homepage_list %}
+			{% for Page in homepage_list %}
+		  		<div class="well">
+			 		<h2>{{ Page.Title }}</h2>
+			 		<p>{{ Page.Body }}</p>
+			 		<h6>{{Page.pub_date}}</h6>
+		  		</div>
+		  	{% endfor %}
+		 {% else %}
 	   		<p>No posts are available.</p>
-	   {% endif %}
 	</div>
 </div>
+   {% endif %}
 {% endblock %}
-    
+	

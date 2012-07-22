@@ -14,7 +14,13 @@
 
 {% block content %}
 <div class="row">
-	<div class="span4 offset4">
+	<div class="span2 offset2">
+		{% for Content in sidebarcontent %}
+			{{Content.Title}}
+		{% endfor %}
+	</div>
+	<div class="span6 offset3">
+		<div class="hero-unit">
 		<h1>{{ app.Name }}</h1>
 			
 			{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -28,17 +34,17 @@
 				<dt>Business Model</dt>
 				<dd> {{ app.business_model}}</dd>
 			</dl>
-
-			{% for points in app.points_set.all %}
+		</div>
+			{% for points in app.points_set.all|dictsort:"importance"%}
 				<blockquote class="point" title="{{points.point_type}}" data-content="{{points.exerpt}}">
-					<p>{{ points.description }}</p>
+					<p>{{ points.description }} <a href="{{points.source}}"><i class="icon-share"></i></a></p>
 					<div class="progress progress-{{points.type}} progress-striped">
-					  <div class="bar"
-					       style="width: {{ points.importance}}%;"></div>
+					  <div class="bar" style="width: {{ points.importance}}%;"></div>
 					</div>
-									</blockquote>
-				
+				</blockquote>
 			{% endfor %}
 	</div>
 </div>
+			
+		
 {% endblock %}
